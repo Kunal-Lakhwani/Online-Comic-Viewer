@@ -1,0 +1,542 @@
+@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: monospace;
+  background-color: #333;
+  color: white;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: "monospace";
+  cursor: pointer;
+  outline: inherit;
+}
+
+.CharaDetails {
+  background: #140e0e;
+  font-family: "MedievalSharp";
+  font-size: 27px;
+  outline: 3px solid #927144;
+  border-radius: 30px;
+  padding: 20px;
+  width: 80%;
+  margin: 10px auto;
+}
+
+.CharaHeader {
+  height: 200px;
+  display: flex;
+  align-items: flex-start;
+  gap: 100px;
+  padding: 20px 10px;
+}
+
+.CharaHeader > .CharaPortrait {
+  width: 120px;
+}
+
+.CharaHeader > span {
+  font-size: 52px;
+  flex-grow: 1;
+  align-self: center;
+}
+
+.ComicsLst > div {
+  width: 60%;
+  display: grid;
+  padding: 20px 10px;
+  grid-template-columns: repeat(2, 50%);
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid silver;
+  color: white;
+  background: #442d2d;
+  margin: 20px;
+}
+
+.ComicsLst > div > * {
+  grid-column: span 1;
+}
+
+.ComicsLst .Control-Box {
+  display: flex;
+  justify-content: end;
+}
+
+.LinkWrapper .LinkBtn {
+  background-color: #927144;
+  font-size: 20px;
+  font-family: "MedievalSharp";
+  color: white;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+}
+
+.CharBio {
+  width: 70%;
+  display: block;
+  margin-inline: auto;
+}
+
+.TabControls {
+  background-color: #777;
+  display: flex;
+  flex-direction: row;
+}
+
+.TabControls > button {
+  color: black;
+  font-size: 20px;
+  flex-grow: 1;
+  height: 40px;
+  text-align: center;
+}
+
+button.activeCharTab {
+  border-bottom: 4px solid green;
+}
+
+.CharaBody {
+  margin-top: 20px;
+}
+
+.CharaBody > .BodyContent {
+  padding: 20px;
+}
+
+@media (max-width: 480px) {
+  .CharacterHeader > .CharaPortrait {
+    display: none;
+  }
+}
+
+.grid-col-2 {
+  grid-column: span 2;
+}
+
+.activeChar {
+  outline: 2px solid limegreen;
+}
+
+.Characters-Flex {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 150px);
+  grid-gap: 10px;
+  justify-content: center;
+  padding: 10px 0px;
+  border-block: 3px solid black;
+}
+
+.CharacterPortrait {
+  display: grid;
+  cursor: pointer;
+  grid-template-columns: 1;
+}
+
+.CharacterPortrait:hover {
+  transform: scale(1.05);
+  transition: transform ease;
+  transition-duration: 200ms;
+}
+
+.CharacterPortrait > img,
+.CharNameContain {
+  grid-row: 1/1;
+  grid-column: 1/1;
+}
+
+.CharacterPortrait > img {
+  width: 150px;
+}
+
+.CharNameContain {
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8), black);
+  font-size: 15px;
+  height: 30px;
+  text-align: center;
+  padding: 4px 0px;
+  align-self: end;
+  display: flex;
+  align-items: end;
+}
+
+.CharNameContain > span {
+  width: 100%;
+}
+
+@media (max-width: 490px) {
+  .Characters-Flex {
+    grid-template-columns: repeat(auto-fit, 100px);
+  }
+  .CharacterPortrait,
+  .CharacterPortrait > img {
+    width: 100px;
+  }
+
+  .CharNameContain {
+    height: 40px;
+  }
+}
+
+.ChaptersDisplayContainer {
+  padding: 20px;
+  margin: 10px auto;
+  width: 60%;
+  /* background-color: #140e0e; */
+}
+
+.ChaptersDisplayContainer > .Comic-Title {
+  color: white;
+  font-family: "MedievalSharp";
+  text-align: center;
+  margin: 10px;
+}
+
+.ComicCharaList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  gap: 5px;
+}
+
+.ComicCharaList > label {
+  line-height: 30px;
+}
+
+.ComicCharaList > span {
+  height: 20px;
+  background-color: #666;
+  line-height: 20px;
+  padding: 4px 5px;
+}
+
+.Chapter-List {
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+  gap: 20px;
+  color: black;
+  font-size: 25px;
+}
+
+.Chapter-List > div {
+  display: grid;
+  padding: 20px 10px;
+  grid-template-columns: repeat(2, 50%);
+  background-color: rgb(231, 209, 160);
+}
+
+.Chapter-List > div > * {
+  grid-column: span 1;
+}
+
+.Chapter-List .LinkWrapper {
+  display: flex;
+  justify-content: end;
+}
+
+.Chapter-List a {
+  text-decoration: none;
+  width: 90px;
+  padding: 10px 0px;
+  border-radius: 10px;
+  text-align: center;
+  color: #927144;
+  background-color: #140e0e;
+}
+
+#ComicDetails {
+  font-size: 25px;
+  line-height: 40px;
+}
+
+.ComicInfo {
+  margin: 20px;
+  display: grid;
+  background-color: rgb(207, 207, 207);
+  color: black;
+  border-radius: 30px;
+  padding: 20px 25px;
+  gap: 10px;
+  grid-template-areas:
+    "Title Status Link"
+    "Title Status Link"
+    "characters chaptercount Link"
+    "updatedon createdon Link";
+  cursor: default;
+}
+
+.Comic-Title {
+  font-size: 55px;
+  color: #330066;
+  grid-area: Title;
+}
+
+.Comic-Charas {
+  grid-area: characters;
+}
+
+.Comic-ChapterCount {
+  grid-area: chaptercount;
+}
+
+.Comic-Created {
+  grid-area: createdon;
+}
+
+.Comic-Updated {
+  grid-area: updatedon;
+}
+
+.Comic-Status {
+  grid-area: Status;
+  display: flex;
+  align-items: center;
+}
+
+.Comic-Status .Status-Lbl {
+  padding: 10px 5px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.Comic-Status > .Status-Lbl[data-status="Ongoing"] {
+  background-color: rgb(25, 243, 54);
+}
+
+.Comic-Status > .Status-Lbl[data-status="Completed"] {
+  background-color: rgb(166, 255, 49);
+}
+
+.Comic-Links {
+  grid-area: Link;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+}
+
+.Comic-Links > a {
+  display: block;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  text-decoration: none;
+  width: 100px;
+  color: black;
+  background-color: rgb(39, 218, 39);
+}
+
+@media (max-width: 480px) {
+  .ComicInfo {
+    margin: 10px;
+    grid-template-areas:
+      "Title Status"
+      "Title Status"
+      "characters chaptercount"
+      "updatedon createdon"
+      "Link Link";
+  }
+  .Comic-Links {
+    flex-direction: row;
+  }
+}
+
+.Comic-Controller {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.ChapterImage {
+  max-width: 700px;
+}
+
+.SlideNav {
+  color: white;
+  font-size: 60px;
+  text-decoration: none;
+  margin: 0px;
+  z-index: 1;
+  position: fixed;
+  top: 50%;
+  width: 75px;
+}
+
+.SlideLeft {
+  left: 10%;
+}
+
+.SlideRight {
+  right: 10%;
+}
+
+@media (max-width: 480px) {
+  .ChapterImage {
+    max-width: 400px;
+  }
+}
+
+.App-Grid {
+  display: grid;
+  grid-template-areas:
+    "MainNav"
+    "ComicArea"
+    "Footer";
+}
+
+.MainNav {
+  background-color: #555;
+  grid-area: MainNav;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  min-height: 40px;
+  padding: 20px;
+}
+
+.MainNav > a {
+  text-decoration: none;
+  color: black;
+  padding: 5px 10px;
+  background-color: white;
+}
+
+.MainNav > .active {
+  background-color: rgb(96, 255, 149);
+}
+
+.SubNav {
+  background-color: #777;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  height: 40px;
+  padding: 20px;
+}
+
+.SubNav > a {
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+  background-color: #2b501c;
+}
+
+.SubNav > .active::after {
+  content: "";
+  border-bottom: rgb(196, 247, 78);
+}
+
+.Basic-Form {
+  padding: 30px;
+  width: 60%;
+  margin-inline: auto;
+  display: grid;
+  row-gap: 20px;
+  column-gap: 10px;
+  grid-template-columns: repeat(2, 50%);
+}
+
+.Basic-Form label {
+  font-size: 14px;
+  line-height: 30px;
+  letter-spacing: 1.5px;
+}
+
+.Basic-Form input {
+  margin-block: auto;
+}
+
+.Basic-Form .FormHeading {
+  text-align: center;
+  grid-column: span 2;
+}
+
+.Basic-Form .FormControls {
+  display: flex;
+  flex-direction: row-reverse;
+  grid-column: span 2;
+}
+
+span.SubText {
+  margin-block: 10px;
+  letter-spacing: 1px;
+  font-size: 11px;
+}
+
+.FormControls input[type="submit"] {
+  width: 120px;
+  height: 40px;
+  background: rgb(15, 233, 88);
+  color: black;
+  border: none;
+  border-radius: 20px;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.files-preview {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: flex-start;
+  overflow-x: auto;
+  gap: 10px;
+}
+
+.files-preview > img {
+  display: block;
+  width: 130px;
+}
+
+.Basic-Form input,
+.Basic-Form textarea {
+  line-height: 30px;
+  width: 100%;
+}
+
+.CharaList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.CharaList > span {
+  height: 20px;
+  background-color: #666;
+  padding: 4px 5px;
+}
+
+.del-btn {
+  background: none;
+  width: 20px;
+  height: 20px;
+  color: inherit;
+  border: 0.5px solid black;
+  padding: 0;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 10px;
+  border-radius: 5px;
+}
